@@ -1,0 +1,72 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Mcommerce</title>
+
+    <!-- Include Bootstrap CSS -->
+    <link rel="stylesheet" href="webjars/bootstrap/4.0.0-2/css/bootstrap.min.css" />
+</head>
+<body>
+
+<!-- Header Section -->
+<header class="bg-dark text-white py-3">
+    <div class="container text-center">
+        <!-- Add logo -->
+        <img src="https://github.com/chilleflx/my-image-repo/blob/main/images/logo.png?raw=true" alt="Mcommerce Logo" class="mb-2" style="max-height: 50px;">
+        <h1 class="mb-0">Mcommerce</h1>
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <a class="navbar-brand" href="/">Accueil</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/">Accueil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/toutes-commandes">Panier</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+</header>
+
+<!-- Main Content Section -->
+<div class="container my-5">
+    <h2 class="text-center mb-4">Nos Produits</h2>
+    <div class="row">
+        <!-- Loop through products and display them -->
+        <div th:each="produit : ${produits}" class="col-md-4 col-sm-6 mb-4">
+            <div class="card shadow-sm h-100">
+                <!-- Product Image -->
+                <img th:src="${produit.image}" class="card-img-top" alt="Product Image" />
+
+                <div class="card-body d-flex flex-column">
+                    <!-- Product Title -->
+                    <h5 class="card-title" th:text="${produit.titre}"></h5>
+                    <!-- Product Price -->
+                    <p class="card-text" th:text="${produit.prix} + ' MAD'"></p>
+
+                    <!-- Link to Product Details -->
+                    <a th:href="@{|/details-produit/${produit.id}|}" class="btn btn-primary mt-auto">Voir Détails</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Footer Section -->
+<footer class="bg-dark text-white py-4">
+    <div class="container text-center">
+        <p>&copy; 2024 Mcommerce. Tous droits réservés.</p>
+        <p>Contactez-nous : <a href="mailto:ilyasdakka2@gmail.com" class="text-white">ilyasdakka2@gmail.com</a></p>
+    </div>
+</footer>
+
+<!-- Include Bootstrap JS -->
+<script type="text/javascript" src="webjars/bootstrap/4.0.0-2/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

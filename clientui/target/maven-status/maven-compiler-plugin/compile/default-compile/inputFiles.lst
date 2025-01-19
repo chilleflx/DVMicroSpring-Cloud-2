@@ -1,0 +1,8 @@
+D:\AllFile\prep\5IIR4\Spring\TP7_Feign_codesource\TP7_Feign_codesource\clientui\src\main\java\com\clientui\beans\CommandeBean.java
+D:\AllFile\prep\5IIR4\Spring\TP7_Feign_codesource\TP7_Feign_codesource\clientui\src\main\java\com\clientui\proxies\MicroserviceCommandeProxy.java
+D:\AllFile\prep\5IIR4\Spring\TP7_Feign_codesource\TP7_Feign_codesource\clientui\src\main\java\com\clientui\proxies\MicroservicePaiementProxy.java
+D:\AllFile\prep\5IIR4\Spring\TP7_Feign_codesource\TP7_Feign_codesource\clientui\src\main\java\com\clientui\beans\PaiementBean.java
+D:\AllFile\prep\5IIR4\Spring\TP7_Feign_codesource\TP7_Feign_codesource\clientui\src\main\java\com\clientui\ClientUiApplication.java
+D:\AllFile\prep\5IIR4\Spring\TP7_Feign_codesource\TP7_Feign_codesource\clientui\src\main\java\com\clientui\proxies\MicroserviceProduitsProxy.java
+D:\AllFile\prep\5IIR4\Spring\TP7_Feign_codesource\TP7_Feign_codesource\clientui\src\main\java\com\clientui\beans\ProductBean.java
+D:\AllFile\prep\5IIR4\Spring\TP7_Feign_codesource\TP7_Feign_codesource\clientui\src\main\java\com\clientui\controller\ClientController.java

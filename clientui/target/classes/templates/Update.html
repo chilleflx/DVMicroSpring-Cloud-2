@@ -1,0 +1,94 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Mettre à jour</title>
+
+    <!-- Include Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css"
+          href="http://localhost:8080/webjars/bootstrap/4.0.0-2/css/bootstrap.min.css"/>
+</head>
+<body class="bg-light">
+
+<!-- Header Section -->
+<header class="bg-dark text-white text-center py-3">
+    <div class="container">
+        <img src="https://github.com/chilleflx/my-image-repo/blob/main/images/logo.png?raw=true" alt="Mcommerce Logo" class="mb-2" style="max-height: 50px;">
+        <h1 class="text-center">Mcommerce</h1>
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <a class="navbar-brand" href="/">Accueil</a>
+        </nav>
+    </div>
+</header>
+
+<!-- Main Content Section -->
+<div class="container mt-5">
+    <h1 class="text-center mb-4">Mettre à jour</h1>
+
+    <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6">
+            <div class="card shadow-sm rounded">
+                <div class="card-body">
+                    <h4 class="font-weight-bold mb-3">Titre: <span th:text="${produit.titre}"></span></h4>
+                    <img th:src="${produit.image}" class="img-fluid rounded mb-3" />
+                    <h4 class="font-weight-bold mb-3">Order Date: <span th:text="${commande.dateCommande}"></span></h4>
+                    <h4 class="font-weight-bold mb-3">Order Description: <span th:text="${produit.description}"></span></h4>
+                    <h4 class="font-weight-bold mb-3">Total Amount: <span th:text="${commande.montant} + ' MAD'"></span></h4>
+
+                    <!-- Order Quantity Form -->
+                    <form th:action="@{/mettre-a-jour-commande}" method="post">
+                        <div class="form-group">
+                            <label for="quantite" class="font-weight-bold"> Quantity<span style="color: red;">*</span></label>
+
+                            <input type="number" id="quantite" name="quantite" class="form-control"
+                                   th:value="${commande.quantite}" min="1" required
+                                   oninvalid="this.setCustomValidity('Please enter a valid quantity greater than or equal to 1')"
+                                   oninput="setCustomValidity('')" />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="description" class="font-weight-bold">Order Description</label>
+                            <textarea id="description" name="description" class="form-control" rows="3" th:text="${commande.description}"></textarea>
+                        </div>
+
+                        <input type="hidden" name="idCommande" th:value="${commande.id}" />
+
+                        <!-- Display errors -->
+                        <div class="alert alert-danger mt-2" th:if="${error}" th:text="${error}"></div>
+
+                        <button type="submit" class="btn btn-primary btn-block font-weight-bold">Update Order</button>
+                    </form>
+
+                    <!-- Space between buttons -->
+                    <div class="mt-3">
+                        <!-- Delete Button (Separate Form) -->
+                        <form th:action="@{/supprimer-commande/{id}(id=${commande.id})}" method="post" style="display:inline;" onsubmit="return confirmDelete();">
+                            <button type="submit" class="btn btn-danger btn-block font-weight-bold">Delete Order</button>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Footer Section -->
+<footer class="bg-dark text-white py-4">
+    <div class="container text-center">
+        <p>&copy; 2024 Mcommerce. Tous droits réservés.</p>
+        <p>Contactez-nous : <a href="mailto:ilyasdakka2@gmail.com" class="text-white">ilyasdakka2@gmail.com</a></p>
+    </div>
+</footer>
+
+<!-- Include Bootstrap JS -->
+<script type="text/javascript" src="http://localhost:8080/webjars/bootstrap/4.0.0-2/js/bootstrap.bundle.min.js"></script>
+
+<!-- Confirm Delete JavaScript Function -->
+<script type="text/javascript">
+    function confirmDelete() {
+        return confirm("Are you sure you want to delete this order?");
+    }
+</script>
+
+</body>
+</html>

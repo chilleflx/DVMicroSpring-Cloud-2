@@ -1,0 +1,8 @@
+com\clientui\proxies\MicroserviceProduitsProxy.class
+com\clientui\controller\ClientController.class
+com\clientui\beans\CommandeBean.class
+com\clientui\beans\ProductBean.class
+com\clientui\proxies\MicroservicePaiementProxy.class
+com\clientui\ClientUiApplication.class
+com\clientui\proxies\MicroserviceCommandeProxy.class
+com\clientui\beans\PaiementBean.class

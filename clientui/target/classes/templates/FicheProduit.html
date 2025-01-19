@@ -1,0 +1,72 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Mcommerce</title>
+
+    <!-- Include Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css"
+          href="http://localhost:8080/webjars/bootstrap/4.0.0-2/css/bootstrap.min.css"/>
+</head>
+<body class="bg-light">
+
+<!-- Header Section -->
+<header class="bg-dark text-white text-center py-3">
+    <div class="container">
+        <img src="https://github.com/chilleflx/my-image-repo/blob/main/images/logo.png?raw=true" alt="Mcommerce Logo" class="mb-2" style="max-height: 50px;">
+        <h1 class="text-center">Mcommerce</h1>
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <a class="navbar-brand" href="/">Accueil</a>
+        </nav>
+    </div>
+</header>
+
+<!-- Main Content Section -->
+<div class="container mt-5">
+    <h1 class="text-center mb-4">Fiche Produit</h1>
+
+    <div class="row justify-content-center">
+        <div class="col-md-4 text-center bg-white p-4 shadow rounded">
+            <!-- Product Image -->
+            <img th:src="${produit.image}" class="img-fluid rounded mb-3" th:alt="${produit.titre}" />
+
+            <!-- Product Title -->
+            <h4 th:text="${produit.titre}" class="font-weight-bold mb-3"></h4>
+
+            <!-- Product Description (Taken from produit.titre) -->
+            <p th:text="${produit.description}" class="mb-3"></p>
+
+            <!-- Product Price -->
+            <p th:text="${produit.prix} + ' MAD'" class="font-weight-bold mb-3"></p>
+
+            <!-- Order Form -->
+            <form th:action="@{|/commander-produit/${produit.id}/${produit.prix}|}" method="get">
+                <div class="form-group">
+                    <label for="quantite">Quantité<span style="color: red;">*</span></label>
+                    <input type="number" id="quantite" name="quantite" class="form-control" value="1" min="1" required />
+                </div>
+
+                <!-- Set Description Automatically from produit.titre -->
+                <div class="form-group">
+                    <label for="description">Description</label>
+                    <textarea id="description" name="Description" class="form-control" ></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-block font-weight-bold">COMMANDER</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Footer Section -->
+<footer class="bg-dark text-white py-4">
+    <div class="container text-center">
+        <p>&copy; 2024 Mcommerce. Tous droits réservés.</p>
+        <p>Contactez-nous : <a href="mailto:ilyasdakka2@gmail.com" class="text-white">ilyasdakka2@gmail.com</a></p>
+    </div>
+</footer>
+
+<!-- Include Bootstrap JS -->
+<script type="text/javascript" src="http://localhost:8080/webjars/bootstrap/4.0.0-2/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

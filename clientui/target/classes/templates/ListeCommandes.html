@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Toutes les Commandes</title>
+    <link rel="stylesheet" href="http://localhost:8080/webjars/bootstrap/4.0.0-2/css/bootstrap.min.css" />
+</head>
+<body>
+
+<!-- Header Section -->
+<header class="bg-dark text-white text-center py-3">
+    <div class="container">
+        <img src="https://github.com/chilleflx/my-image-repo/blob/main/images/logo.png?raw=true" alt="Mcommerce Logo" class="mb-2" style="max-height: 50px;">
+        <h1 class="text-center">Mcommerce</h1>
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <a class="navbar-brand" href="/">Accueil</a>
+        </nav>
+    </div>
+</header>
+
+<!-- Commandes List -->
+<div class="container my-5">
+    <h2 class="text-center mb-4">Panier</h2>
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Quantité</th>
+            <th>Date Commande</th>
+            <th>Description</th>
+            <th>Montant</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="commande : ${commandes}">
+            <td th:text="${commande.quantite}"></td>
+            <td th:text="${commande.dateCommande}"></td>
+            <td th:text="${commande.description}"></td>
+            <td th:text="${commande.montant} + ' MAD'"></td>
+            <td>
+                <!-- Update Button -->
+                <a th:href="@{|/modifier-commande/${commande.id}/${commande.productId}|}" class="btn btn-info">Mettre à jour</a>
+            </td>
+        </tr>
+
+        </tbody>
+    </table>
+</div>
+
+<!-- Footer Section -->
+<footer class="bg-dark text-white py-4">
+    <div class="container text-center">
+        <p>&copy; 2024 Mcommerce. Tous droits réservés.</p>
+        <p>Contactez-nous : <a href="mailto:ilyasdakka2@gmail.com" class="text-white">ilyasdakka2@gmail.com</a></p>
+    </div>
+</footer>
+
+<script type="text/javascript" src="http://localhost:8080/webjars/bootstrap/4.0.0-2/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

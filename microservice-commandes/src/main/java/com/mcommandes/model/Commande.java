@@ -23,8 +23,6 @@ public class Commande {
 
     private Integer quantite;
 
-    private Boolean commandePayee;
-
     private double montant;
 
     private String description;
