@@ -54,6 +54,7 @@ License
 This repository demonstrates a microservices architecture using Spring Boot and Spring Cloud. The services are designed to work together, leveraging Spring Cloud Config for centralized configuration, Eureka for service discovery, and Zuul for API gateway functionality.
 
 # 🛠 Microservices Overview
+
 1. ConfigMicro ☁️
 A Spring Cloud Config Server that provides centralized configuration management for all microservices. It fetches configuration properties from a Git repository.
 
