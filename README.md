@@ -179,43 +179,61 @@ cd DVMicroSpring-Cloud-2
 2.Run ConfigMicro:
 
 cd ConfigMicro
+
 mvn clean install
+
 mvn spring-boot:run
+
 ConfigMicro will start on http://localhost:9101.
 
 3.Run eurekaserver:
 
 cd ../eurekaserver
+
 mvn clean install
+
 mvn spring-boot:run
+
 Eureka Server will start on http://localhost:9102.
 
 4.Run microservice-commandes:
 
 cd ../microservice-commandes
+
 mvn clean install
+
 mvn spring-boot:run
+
 microservice-commandes will start on http://localhost:9201.
 
 5.Run microservice-produits:
 
 cd ../microservice-produits
+
 mvn clean install
+
 mvn spring-boot:run
+
 microservice-produits will start on http://localhost:9301.
 
 6.Run clientui:
 
 cd ../clientui
+
 mvn clean install
+
 mvn spring-boot:run
+
 clientui will start on http://localhost:8080.
 
 7.Run zuul-server:
 
 cd ../zuul-server
+
 mvn clean install
+
 mvn spring-boot:run
+
 zuul-server will start on http://localhost:9004.
 
 # ⚙️ Configuration Management
