@@ -137,7 +137,7 @@ Integration with Eureka for service discovery.
 Configuration:
 Default Port: 9004
 
-🛠 Technologies
+# 🛠 Technologies
 Java 17 ☕
 
 Spring Boot 2.7.16 🌱
