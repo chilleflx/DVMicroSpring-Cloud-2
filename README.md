@@ -251,27 +251,44 @@ Refresh the configuration using the Actuator endpoint:
 curl -X POST http://localhost:8080/actuator/refresh
 # 🔗 Endpoints
 microservice-commandes
+
 HTTP Method	Endpoint	Description
+
 POST	/commandes	Add a new order.
+
 GET	/commandes/last	Retrieve the last orders.
+
 GET	/commandes	Retrieve all orders.
+
 GET	/commandes/{id}	Retrieve a specific order by ID.
+
 PUT	/commandes/update	Update an existing order.
+
 DELETE	/commandes/{id}	Delete an order by ID.
 
 microservice-produits
+
 HTTP Method	Endpoint	Description
+
 GET	/Produits	Retrieve the list of all products.
+
 GET	/Produits/{id}	Retrieve a product by its ID.
 
 clientui
 HTTP Method	Endpoint	Description
+
 GET	/afficher-message	Displays a message from the controller.
+
 GET	/toutes-commandes	Displays all existing orders.
+
 GET	/details-produit/{id}	Displays the details of a product.
+
 POST	/commander-produit/{idProduit}/{montant}	Creates an order.
+
 DELETE	/supprimer-commande/{idCommande}	Deletes an order.
+
 GET	/modifier-commande/{id}/{productId}	Displays the form to update an order.
+
 POST	/mettre-a-jour-commande	Updates an order.
 
 # 🩺 Health Monitoring
@@ -279,5 +296,7 @@ microservice-commandes
 Uses Spring Boot Actuator for health checks.
 
 Access the health endpoint:
+
 http://localhost:8080/actuator/health
+
 Custom health indicator: The service is UP if there are orders in the COMMANDE table; otherwise, it is DOWN.
