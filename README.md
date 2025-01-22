@@ -300,3 +300,12 @@ Access the health endpoint:
 http://localhost:8080/actuator/health
 
 Custom health indicator: The service is UP if there are orders in the COMMANDE table; otherwise, it is DOWN.
+
+# 👥 Team
+Meet the team behind Mcommandes:
+
+DAKKA Ilyass
+Marouane Rachdi
+
+# 📜 License
+This project is licensed under the MIT License. See the LICENSE file for details.
